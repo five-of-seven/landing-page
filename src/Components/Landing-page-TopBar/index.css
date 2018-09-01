@@ -1,0 +1,16 @@
+.TopBar-header {
+    background-color: #222;
+    color: white;
+    opacity: 0.8;
+    position: relative;
+    width: 100%;
+    float: right;
+} 
+
+.TopBar-motto {
+    top: -20px;
+    position: relative;
+    left: 15px;
+    font-family: 'Merriweather', serif;
+    word-spacing: 0.5em;
+}

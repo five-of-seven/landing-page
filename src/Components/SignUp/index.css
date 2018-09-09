@@ -1,0 +1,23 @@
+.LogIn-form {
+    margin-top: 15%;
+    opacity: 0.8;
+    height: 270px;
+    width: 100px;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.TextField {
+    width: 300px;
+    background-color: #e0dedc;
+}
+
+.Button {
+    top: 15px;
+    width: 300px;
+}
+
+p {
+    padding-top: 10px;
+    font-family: 'Merriweather', serif;
+}

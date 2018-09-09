@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Landing_Page from '../Landing_Page/index'
 import HomePage from '.././HomePage/HomePage'
+import SignUp from '.././SignUp/index'
 
 // React Routing
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
@@ -36,7 +37,7 @@ class App extends Component {
 
           <Route exact path="/" component={Landing_Page} />
           <Route path="/homepage" component={HomePage} />
-
+          <Route path="/signUp" component={SignUp} />
         </div>
       </Router>
     );

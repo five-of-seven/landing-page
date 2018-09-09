@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import SignUp from '.././SignUp/index'
+import SignUp from '../.././SignUp/index'
 
 // React Routing
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -40,9 +40,9 @@ class LogIn extends Component {
                                 <Button className="Button" variant="contained" color="primary">
                                     Log In
                                 </Button>
-                                {/* <Router>
+                                
                                 <p>Not a member? <span><Link to="/signUp" component={SignUp}>Sign Up here</Link></span> </p>
-                                </Router> */}
+                                
                             </AppBar>
                         </Grid>
                     </Grid>

@@ -22,7 +22,8 @@ class YouTube extends Component {
         height: 715,
         width: 1280,
         videoId: 'sq9rZJIVOPk',
-        playerVars: { 
+        playerVars: {
+          'mute': 1, 
           'autoplay': 1, 
           'controls': 0,
           'disablekb': 1,

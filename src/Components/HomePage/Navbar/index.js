@@ -10,8 +10,7 @@ import './index.css';
 
 
 
-class Navbar extends Component {
-    render() {
+function Navbar() {
         return (
             <div>
                 <AppBar position="static" color="default">
@@ -42,7 +41,6 @@ class Navbar extends Component {
                 </AppBar>
             </div>
         )
-    }
 }
 
 export default Navbar

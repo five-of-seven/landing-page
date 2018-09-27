@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 // Custom CSS styling
 import './App.css';
-import './youtube_iframe_api/index.css'
 // ******************
 
 class App extends Component {

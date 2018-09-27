@@ -12,8 +12,7 @@ import './index.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // *************
 
-class SignUp extends Component {
-    render() {
+function SignUp() {
         return (
             <div>
                 <Grid container spacing={24} direction="column">
@@ -58,7 +57,6 @@ class SignUp extends Component {
                 </Grid>
             </div>
         )
-    }
 }
 
 export default SignUp;

@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import SignUp from '../.././SignUp/index'
 
 // React Routing
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 // *************
 
 // Material UI styles
-import { AppBar, TextField, Button, Grid } from '@material-ui/core';
-import { FormControl, FormLabel } from '@material-ui/core';
+import { AppBar, TextField, Button, Grid } from '@material-ui/core'
+import { FormControl, FormLabel } from '@material-ui/core'
 // ******************
 
 // Custom CSS styling
-import './index.css';
+import './index.css'
 // ******************
 
-class LogIn extends Component {
-    render() {
+function LogIn() {
         return(
             <div>
                 <Grid container spacing={24} direction="column">
@@ -49,7 +48,6 @@ class LogIn extends Component {
                 </Grid>
             </div>
         )
-    }
 }   
 
-export default LogIn;
+export default LogIn

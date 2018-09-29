@@ -73,9 +73,7 @@ module.exports = {
                 'sudo npm install && ' +
                 'sudo pm2 reload ecosystem.config.js --env production && ' +
                 'sudo pm2 restart landing-page && ' +
-                'sudo pm2 start && ' +
-                'cd ~/.landing-page/source && ' +
-                'sudo npm start'
+                'sudo pm2 start'
         },
     }
 };

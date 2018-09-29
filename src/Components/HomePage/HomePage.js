@@ -9,6 +9,10 @@ import { AppBar, TextField, Button, Grid, Paper } from '@material-ui/core'
 import { FormControl, FormLabel } from '@material-ui/core'
 // ******************
 
+// Custom CSS styles
+import './HomePage.css'
+// *****************
+
 import Navbar from './Navbar/index'
 
 class HomePage extends Component {
@@ -21,7 +25,9 @@ class HomePage extends Component {
                         <Paper><h1>Services</h1></Paper>
                     </Grid>
                     <Grid item xs={6}>
-                        <Paper><h1>News Feed</h1></Paper>
+                        <Paper className="newsFeed">
+                                <iframe src="http://18.144.23.45/" width="100%" height="100%"></iframe>                        
+                        </Paper>
                     </Grid>
                     <Grid item xs={3}>
                         <Paper><h1>Logout</h1></Paper>

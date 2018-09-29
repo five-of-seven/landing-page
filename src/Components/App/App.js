@@ -29,9 +29,6 @@ class App extends Component {
         <div>
 
           <div className="App" >
-          {/* <div className="player"></div> */}
-          {/* <TopBar/>
-          <LogIn/> */}
           </div>
 
           <Route exact path="/" component={Landing_Page} />

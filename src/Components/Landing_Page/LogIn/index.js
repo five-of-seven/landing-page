@@ -21,27 +21,8 @@ function LogIn() {
                     <Grid container item spacing={0} justify="center">
                         <Grid item xs={4}>
                             <AppBar margin ="auto" position="static" color="default" className="LogIn-form">
-                                <TextField
-                                    id="search"
-                                    label="User Name"
-                                    type="search"
-                                    margin="dense"
-                                    className="TextField"
-                                />
-                                <TextField
-                                    id="password-input"
-                                    label="Password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    margin="dense"
-                                    className="TextField"
-                                />
-                                <Button className="Button" variant="contained" color="primary">
-                                    Log In
-                                </Button>
-                                
-                                <p>Not a member? <span><Link to="/signUp" component={SignUp}>Sign Up here</Link></span> </p>
-                                
+                                <iframe height="90%" src="http://18.222.112.139/signin/"></iframe>
+                                <p>Not a member? <span><Link to="/signUp" component={SignUp}>Sign Up here</Link></span> </p> 
                             </AppBar>
                         </Grid>
                     </Grid>

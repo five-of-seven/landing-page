@@ -26,7 +26,7 @@ class HomePage extends Component {
                     </Grid>
                     <Grid item xs={6}>
                         <Paper className="newsFeed">
-                                <iframe src="http://18.144.23.45/" width="100%" height="100%"></iframe>                        
+                                <iframe src="http://18.222.112.139/" width="100%" height="100%"></iframe>                        
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>

@@ -16,7 +16,21 @@ import './HomePage.css'
 import Navbar from './Navbar/index'
 
 class HomePage extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            userId: ''
+        }
+    }
+
+    componentDidMount() {
+        console.log(this.props.location.search)
+
+        this.setState({userId: this.props.location.search})
+    }
+
     render() {
+        var url = `http://54.183.163.131${this.state.userId}`;
         return (
             <div>
                 {/* <Navbar/> */}
@@ -26,7 +40,7 @@ class HomePage extends Component {
                     </Grid>
                     <Grid item xs={6}>
                         <Paper className="newsFeed">
-                            <iframe src="http://54.183.163.131/" width="100%" height="100%"></iframe>                        
+                            <iframe src={url} width="100%" height="100%"></iframe>                        
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>

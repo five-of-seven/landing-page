@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SignUp from '../.././SignUp/index'
+import axios from 'axios'
 
 // React Routing
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
@@ -12,6 +13,7 @@ import { FormControl, FormLabel } from '@material-ui/core'
 
 // Custom CSS styling
 import './index.css'
+import Axios from '../../../../node_modules/axios';
 // ******************
 
 function LogIn() {
@@ -22,6 +24,11 @@ function LogIn() {
                         <Grid item xs={4}>
                             <AppBar margin ="auto" position="static" color="default" className="LogIn-form">
                                 <iframe height="90%" src="http://18.222.112.139/signin/"></iframe>
+                                {/* {axios.get('http://18.222.112.139/signin/')
+                                    .then((res) => {
+                                        res.json()
+                                    })
+                                } */}
                                 <p>Not a member? <span><Link to="/signUp" component={SignUp}>Sign Up here</Link></span> </p> 
                             </AppBar>
                         </Grid>

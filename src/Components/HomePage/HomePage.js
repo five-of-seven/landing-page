@@ -19,14 +19,14 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                {/* <Navbar/> */}
                 <Grid container spacing={24}>
                     <Grid item xs={3}>
                         <Paper><h1>Services</h1></Paper>
                     </Grid>
                     <Grid item xs={6}>
                         <Paper className="newsFeed">
-                                <iframe src="http://18.222.112.139/" width="100%" height="100%"></iframe>                        
+                            <iframe src="http://54.183.163.131/" width="100%" height="100%"></iframe>                        
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>

@@ -31,12 +31,13 @@ class HomePage extends Component {
 
     render() {
         var url = `http://54.183.163.131${this.state.userId}`;
+        var url2 = `http://18.191.254.197/#/profile${this.state.userId}`;
         return (
             <div>
                 {/* <Navbar/> */}
                 <Grid container spacing={24}>
                     <Grid item xs={3}>
-                        <Paper><h1>Services</h1></Paper>
+                        <Paper className="newsFeed"><iframe src={url2} width="100%" height="100%"></iframe></Paper>
                     </Grid>
                     <Grid item xs={6}>
                         <Paper className="newsFeed">

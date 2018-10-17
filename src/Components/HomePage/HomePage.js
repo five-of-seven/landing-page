@@ -47,7 +47,7 @@ class HomePage extends Component {
                     </Grid>
                     <Grid item xs={3}>
                         {/* <Paper><h1>{url}</h1></Paper> */}
-                        <Papar>Logout</Paper>
+                        <Paper>Logout</Paper>
                     </Grid>
                 </Grid>
             </div>

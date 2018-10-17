@@ -30,7 +30,7 @@ class HomePage extends Component {
         // let idAndjwt = this.state.userId + this.state.jwt
         axios.post(`http://18.191.158.114:8000/logout?jwt=${this.state.jwt}`, {
             data: {
-                userId: this.state.userId
+                userId: this.state.userId.slice(8)
             }
             })
           .then(function (response) {

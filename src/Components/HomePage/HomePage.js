@@ -24,9 +24,9 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.location.search)
-
-        this.setState({userId: this.props.location.search})
+        let url = this.props.location.search.split('&')
+        console.log(url[0])
+        this.setState({userId: url[0]})
     }
 
     render() {

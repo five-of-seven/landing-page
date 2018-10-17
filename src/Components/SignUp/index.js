@@ -24,7 +24,7 @@ function SignUp() {
                         <Grid item xs={4}>
                             <AppBar margin ="auto" position="static" color="default" className="SignIn-form">
                                 {/* Sign-UP microservice component */}
-                            <iframe height="90%" src="http://18.222.112.139/signup/"></iframe>
+                            <iframe height="90%" src="http://18.191.158.114:8000/signup"></iframe>
                                 {/* <div id="signup"></div>
                                 <script type="text/javascript" src="http://18.224.138.143/signup/bundle.js"></script> */}
                             </AppBar>

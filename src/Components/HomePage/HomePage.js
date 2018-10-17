@@ -32,6 +32,7 @@ class HomePage extends Component {
     render() {
         var url = `http://54.183.163.131${this.state.userId}`;
         var url2 = `http://18.191.254.197/#/profile${this.state.userId}`;
+        var url3 = `http://18.218.103.135${this.state.userId}`;
         return (
             <div>
                 {/* <Navbar/> */}
@@ -45,7 +46,7 @@ class HomePage extends Component {
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>
-                        <Paper><h1>Logout</h1></Paper>
+                        <Paper><h1>{url}</h1></Paper>
                     </Grid>
                 </Grid>
             </div>

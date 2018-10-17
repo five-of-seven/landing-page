@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 // React Routing
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
@@ -19,14 +20,32 @@ class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            userId: ''
+            userId: '',
+            jwt: ''
         }
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+
+    handleLogout() {
+        // let idAndjwt = this.state.userId + this.state.jwt
+        axios.post(`http://18.191.158.114:8000/logout?jwt=${this.state.jwt}`, {
+            data: {
+                userId: this.state.userId
+            }
+            })
+          .then(function (response) {
+            console.log(response);
+            window.top.location = response.url
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     componentDidMount() {
         let url = this.props.location.search.split('&')
-        console.log(url[0])
         this.setState({userId: url[0]})
+        this.setState({jwt: '&' + url[1]})
     }
 
     render() {
@@ -47,7 +66,7 @@ class HomePage extends Component {
                     </Grid>
                     <Grid item xs={3}>
                         {/* <Paper><h1>{url}</h1></Paper> */}
-                        <Paper>Logout</Paper>
+                        <Paper onClick={()=>this.handleLogout()}>Logout</Paper>
                     </Grid>
                 </Grid>
             </div>

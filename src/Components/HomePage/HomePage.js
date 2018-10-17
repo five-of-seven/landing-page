@@ -35,7 +35,7 @@ class HomePage extends Component {
             })
           .then(function (response) {
             console.log(response);
-            window.top.location = response.url
+            window.location = '/'
           })
           .catch(function (error) {
             console.log(error);

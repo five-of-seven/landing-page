@@ -51,7 +51,9 @@ class HomePage extends Component {
     render() {
         var url = `http://54.183.163.131${this.state.userId}`;
         var url2 = `http://18.191.254.197/#/profile${this.state.userId}`;
-        var url3 = `http://18.218.103.135${this.state.userId}`;
+        var url3 = `http://52.14.229.151${this.state.userId}${this.state.jwt}`;
+        console.log(url3)
+        console.log(this.state.userId)
         return (
             <div>
                 {/* <Navbar/> */}
@@ -65,8 +67,10 @@ class HomePage extends Component {
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>
-                        {/* <Paper><h1>{url}</h1></Paper> */}
                         <Paper onClick={()=>this.handleLogout()}>Logout</Paper>
+                        <Paper className="newsFeed">
+                            <iframe src={url3} width="100%" height="100%"></iframe>
+                        </Paper>
                     </Grid>
                 </Grid>
             </div>

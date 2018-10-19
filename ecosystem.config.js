@@ -54,7 +54,7 @@ module.exports = {
 
             ssh_options: ["StrictHostKeyChecking=no", "PasswordAuthentication=no", "ForwardAgent=yes"],
 
-            repo: 'git@github.com:nalnir/landing-page.git',
+            repo: 'git@github.com:five-of-seven/landing-page.git',
 
             path: '/landing-page',
 

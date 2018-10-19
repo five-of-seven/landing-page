@@ -1,11 +1,11 @@
 module.exports = {
 
     /**
-    
+
     * Application configuration section
-    
+
     * http://pm2.keymetrics.io/docs/usage/application-declaration/
-    
+
     */
 
     apps: [
@@ -31,30 +31,30 @@ module.exports = {
 
 
     /**
-    
+
     * Deployment section
-    
+
     * http://pm2.keymetrics.io/docs/usage/deployment/
-    
+
     */
 
     deploy: {
 
         production: {
 
-            key: '/Users/Juico/.ssh/id_rsa',
+            key: '/Users/shankarkd/.ssh/id_rsa',
 
             user: 'ubuntu',
 
-            key: "/Users/Juico/.ssh/id_rsa",
+            // key: "/Users/Juico/.ssh/id_rsa",
 
-            host: ['18.217.151.202'],
+            host: ['13.58.168.57'],
 
             ref: 'origin/master',
 
             ssh_options: ["StrictHostKeyChecking=no", "PasswordAuthentication=no", "ForwardAgent=yes"],
 
-            repo: 'git@github.com:nalnir/landing-page.git',
+            repo: 'git@github.com:five-of-seven/landing-page.git',
 
             path: '/landing-page',
 

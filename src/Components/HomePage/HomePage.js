@@ -56,14 +56,14 @@ class HomePage extends Component {
         console.log(this.state.userId)
         return (
             <div>
-                {/* <Navbar/> */}
+                { <Navbar/> }
                 <Grid container spacing={24}>
                     <Grid item xs={3}>
                         <Paper className="newsFeed"><iframe src={url2} width="100%" height="100%"></iframe></Paper>
                     </Grid>
                     <Grid item xs={6}>
                         <Paper className="newsFeed">
-                            <iframe src={url} width="100%" height="100%"></iframe>                        
+                            <iframe src={url} width="100%" height="100%"></iframe>
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>

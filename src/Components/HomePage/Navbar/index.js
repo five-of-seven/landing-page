@@ -1,20 +1,32 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 // Material UI styles
-import { AppBar, Button, Toolbar, Grid} from '@material-ui/core'
+import { AppBar, Button, IconButton, Toolbar, Grid, Typography} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 // ******************
 
 // Custom CSS styling
 import './index.css';
 // ******************
 
-
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
 
 class Navbar extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -27,37 +39,56 @@ class Navbar extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
-            <div>
-                <AppBar position="static" color="default">
-                    <Toolbar>
-                        <Grid container spacing={16}>
-                            <Grid item>
-                                <Button onClick={()=>this.handleClick()}  variant="contained" size="large" color="primary" >
-                                For Sale
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant="contained" size="large" color="primary" >
-                                Barter
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant="contained" size="large" color="primary" >
-                                Events
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant="contained" size="large" color="primary" >
-                                Services
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Toolbar>
-                </AppBar>
+            <div className={classes.root}>
+              <AppBar position="static">
+                <Toolbar>
+                  <Typography variant="h6" color="inherit" className={classes.grow}>
+                    Home
+                  </Typography>
+                  <Typography variant="h6" color="inherit" className={classes.grow}>
+                    Chat
+                  </Typography>
+                  <Typography variant="h6" color="inherit" className={classes.grow}>
+                    Profile
+                  </Typography>
+                  <Button color="inherit">Logout</Button>
+                </Toolbar>
+              </AppBar>
             </div>
-        )
+        );
+//         return (
+//             <div>
+//                 <AppBar position="static" color="default">
+//                     <Toolbar>
+//                         <Grid container spacing={16}>
+//                             <Grid item>
+//                                 <Button onClick={()=>this.handleClick()}  variant="contained" size="large" color="primary" >
+//                                 Home
+//                                 </Button>
+//                             </Grid>
+//                             <Grid item>
+//                                 <Button variant="contained" size="large" color="primary" >
+//                                 Chat
+//                                 </Button>
+//                             </Grid>
+//                             <Grid item>
+//                                 <Button variant="contained" size="large" color="primary" >
+//                                 Profile
+//                                 </Button>
+//                             </Grid>
+// {/*                            <Grid item>
+//                                 <Button variant="contained" size="large" color="primary" >
+//                                 Services
+//                                 </Button>
+//                             </Grid>*/}
+//                         </Grid>
+//                     </Toolbar>
+//                 </AppBar>
+//             </div>
+//         )
 }
 }
 
-export default Navbar
+export default withStyles(styles)(Navbar)

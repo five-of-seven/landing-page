@@ -1,11 +1,11 @@
 module.exports = {
 
     /**
-    
+
     * Application configuration section
-    
+
     * http://pm2.keymetrics.io/docs/usage/application-declaration/
-    
+
     */
 
     apps: [
@@ -31,24 +31,24 @@ module.exports = {
 
 
     /**
-    
+
     * Deployment section
-    
+
     * http://pm2.keymetrics.io/docs/usage/deployment/
-    
+
     */
 
     deploy: {
 
         production: {
 
-            key: '/Users/Juico/.ssh/id_rsa',
+            key: '/Users/shankarkd/Coding/HackReactor/RPT07/thesis/microservices/kong',
 
             user: 'ubuntu',
 
-            key: "/Users/Juico/.ssh/id_rsa",
+            // key: "/Users/Juico/.ssh/id_rsa",
 
-            host: ['18.217.151.202'],
+            host: ['18.219.203.50'],
 
             ref: 'origin/master',
 

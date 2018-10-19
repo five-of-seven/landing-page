@@ -21,9 +21,15 @@ class HomePage extends Component {
         super(props)
         this.state = {
             userId: '',
-            jwt: ''
+            jwt: '',
+            showProfile: false,
+            showFeed: true,
+            showChat: false
         }
-        this.handleLogout = this.handleLogout.bind(this)
+        this.handleLogout = this.handleLogout.bind(this);
+        this.handleProfileClick = this.handleProfileClick.bind(this);
+        this.handleFeedClick = this.handleFeedClick.bind(this);
+        this.handleChatClick = this.handleChatClick.bind(this);
     }
 
     handleLogout() {
@@ -42,6 +48,21 @@ class HomePage extends Component {
           });
     }
 
+    handleProfileClick() {
+        console.log("Hey you clicked profile");
+        this.setState({ showProfile: true, showFeed: false, showChat: false });
+    }
+
+    handleFeedClick() {
+        console.log("Hey you clicked Feed");
+        this.setState({ showProfile: false, showFeed: true, showChat: false });
+    }
+
+    handleChatClick() {
+        console.log("Hey you clicked Chat");
+        this.setState({ showProfile: false, showFeed: false, showChat: true });
+    }
+
     componentDidMount() {
         let url = this.props.location.search.split('&')
         this.setState({userId: url[0]})
@@ -56,23 +77,37 @@ class HomePage extends Component {
         console.log(this.state.userId)
         return (
             <div>
-                { <Navbar/> }
-                <Grid container spacing={24}>
-                    <Grid item xs={3}>
+                { <Navbar profileClick={this.handleProfileClick} feedClick={this.handleFeedClick} chatClick={this.handleChatClick} showProfile={this.state.showProfile} showFeed={this.state.showFeed} showChat={this.state.showChat}/> }
+
+                {this.state.showProfile ?
+                    <Grid item>
                         <Paper className="newsFeed"><iframe src={url2} width="100%" height="100%"></iframe></Paper>
                     </Grid>
-                    <Grid item xs={6}>
+                    : null
+                }
+                 {this.state.showFeed ?
+                    <Grid item>
                         <Paper className="newsFeed">
                             <iframe src={url} width="100%" height="100%"></iframe>
                         </Paper>
                     </Grid>
-                    <Grid item xs={3}>
+                    : null
+                }
+                 {this.state.showChat ?
+                    <Grid item>
+                        <Paper className="newsFeed">
+                            <iframe width="100%" height="100%"><div><h1>CHAT HERE</h1> </div></iframe>
+                        </Paper>
+                    </Grid>
+                    : null
+                }
+{/*                    <Grid item xs={3}>
                         <Paper onClick={()=>this.handleLogout()}>Logout</Paper>
                         <Paper className="newsFeed">
                             <iframe src={url3} width="100%" height="100%"></iframe>
                         </Paper>
-                    </Grid>
-                </Grid>
+                    </Grid>*/}
+
             </div>
         )
     }

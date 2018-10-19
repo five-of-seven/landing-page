@@ -42,13 +42,13 @@ module.exports = {
 
         production: {
 
-            key: '/Users/shankarkd/Coding/HackReactor/RPT07/thesis/microservices/kong',
+            key: '/Users/shankarkd/.ssh/id_rsa',
 
             user: 'ubuntu',
 
             // key: "/Users/Juico/.ssh/id_rsa",
 
-            host: ['18.219.203.50'],
+            host: ['13.58.168.57'],
 
             ref: 'origin/master',
 

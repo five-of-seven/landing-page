@@ -48,7 +48,7 @@ module.exports = {
 
             // key: "/Users/Juico/.ssh/id_rsa",
 
-            host: ['13.58.168.57'],
+            host: ['18.223.20.145'],
 
             ref: 'origin/master',
 

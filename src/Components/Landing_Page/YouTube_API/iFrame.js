@@ -19,19 +19,19 @@ class YouTube extends Component {
     }
     loadYT.then((YT) => {
       this.player = new YT.Player(this.youtubePlayerAnchor, {
-        height: 715,
-        width: 1280,
+        height: '100%',
+        width: '100%',
         videoId: 'sq9rZJIVOPk',
         playerVars: {
-          'mute': 1, 
-          'autoplay': 1, 
+          'mute': 1,
+          'autoplay': 1,
           'controls': 0,
           'disablekb': 1,
           'fs': 0,
           'iv_load_policy': 3,
           'loop': 1,
           'modestbranding': 1,
-          'playlist': 'sq9rZJIVOPk' 
+          'playlist': 'sq9rZJIVOPk'
         },
         events: {
           onStateChange: this.onPlayerStateChange

@@ -1,16 +1,26 @@
 .TopBar-header {
-    background-color: #222;
+/*    background-color: #AD9C78;*/
+    background-color: #F1F1F1;
+
     color: white;
-    opacity: 0.8;
+/*    opacity: 0.8;*/
     position: relative;
     width: 100%;
     float: right;
-} 
+    border-bottom: 15px solid black;
+}
 
 .TopBar-motto {
     top: -20px;
     position: relative;
     left: 15px;
-    font-family: 'Merriweather', serif;
+/*    font-family: 'Merriweather', serif;*/
     word-spacing: 0.5em;
+    font-size: 1.5em;
+    color: #40A798;
+    margin: 0;
+}
+
+img {
+    width: 175px;
 }

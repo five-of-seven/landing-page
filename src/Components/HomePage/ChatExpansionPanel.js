@@ -19,7 +19,10 @@ const styles = theme => ({
 
 function ChatExpansionPanel(props) {
   const { classes } = props;
-  var url3 = `http://52.14.229.151${props.userId}${props.jwt}`;
+  const url3 = `http://18.191.158.114:8000/chat${props.userId}${props.jwt}`;
+  console.log('In chat - UserId is...', props.userId);
+  console.log('jwt is ...', props.jwt);
+  // const url3 = `http://52.14.229.151/chat${props.userId}${props.jwt}`;
   // var url3 = `http://52.14.229.151?userId=1234${props.jwt}`;
   return (
     <div className={classes.root}>

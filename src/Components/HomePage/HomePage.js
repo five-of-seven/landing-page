@@ -96,7 +96,7 @@ class HomePage extends Component {
                  {this.state.showChat ?
                     <Grid item>
                         <Paper className="newsFeed">
-                            <iframe width="100%" height="100%"><div><h1>CHAT HERE</h1> </div></iframe>
+                            <iframe src={url3} width="100%" height="100%"></iframe>
                         </Paper>
                     </Grid>
                     : null

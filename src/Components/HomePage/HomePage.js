@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 // Material UI styles
 import { AppBar, TextField, Button, Grid, Paper } from '@material-ui/core'
-import { FormControl, FormLabel } from '@material-ui/core'
+import Modal from '@material-ui/core/Modal';
+import { FormControl, FormLabel } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 // ******************
 
 // Custom CSS styles
@@ -15,6 +17,25 @@ import './HomePage.css'
 // *****************
 
 import Navbar from './Navbar/index'
+import ChatModal from './ChatModal'
+import ChatExpansionPanel from './ChatExpansionPanel'
+
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    // height: 140,
+    // width: 100,
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  control: {
+    padding: theme.spacing.unit * 2,
+  },
+});
 
 class HomePage extends Component {
     constructor(props) {
@@ -70,6 +91,7 @@ class HomePage extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         var url = `http://54.183.163.131${this.state.userId}`;
         var url2 = `http://18.191.254.197/#/profile${this.state.userId}`;
         var url3 = `http://52.14.229.151${this.state.userId}${this.state.jwt}`;
@@ -77,40 +99,41 @@ class HomePage extends Component {
         console.log(this.state.userId)
         return (
             <div>
-                { <Navbar profileClick={this.handleProfileClick} feedClick={this.handleFeedClick} chatClick={this.handleChatClick} showProfile={this.state.showProfile} showFeed={this.state.showFeed} showChat={this.state.showChat}/> }
+                <Grid container className={classes.root} spacing={12}>
+                    <Grid item xs={12}>
+                        {<Navbar profileClick={this.handleProfileClick}
+                                feedClick={this.handleFeedClick}
+                                chatClick={this.handleChatClick}
+                                showProfile={this.state.showProfile}
+                                showFeed={this.state.showFeed}
+                        />}
+                    </Grid>
 
-                {this.state.showProfile ?
-                    <Grid item>
-                        <Paper className="newsFeed"><iframe src={url2} width="100%" height="100%"></iframe></Paper>
+                    <Grid item xs={12}>
+                        <Grid container className={classes.demo} justify="center" spacing={16}>
+                            <Grid item xs={8}>
+                                <Paper className="newsFeed">
+                                    {this.state.showProfile ?
+                                        <iframe src={url2} width="100%" height="100%"></iframe>
+                                        : null
+                                    }
+                                    {this.state.showFeed ?
+                                        <iframe src={url} width="100%" height="100%"></iframe>
+                                        : null
+                                    }
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Paper className="newsFeed">
+                                    <ChatExpansionPanel user={this.state.userId} jwt={this.state.jwt}/>
+                                </Paper>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    : null
-                }
-                 {this.state.showFeed ?
-                    <Grid item>
-                        <Paper className="newsFeed">
-                            <iframe src={url} width="100%" height="100%"></iframe>
-                        </Paper>
-                    </Grid>
-                    : null
-                }
-                 {this.state.showChat ?
-                    <Grid item>
-                        <Paper className="newsFeed">
-                            <iframe src={url3} width="100%" height="100%"></iframe>
-                        </Paper>
-                    </Grid>
-                    : null
-                }
-{/*                    <Grid item xs={3}>
-                        <Paper onClick={()=>this.handleLogout()}>Logout</Paper>
-                        <Paper className="newsFeed">
-                            <iframe src={url3} width="100%" height="100%"></iframe>
-                        </Paper>
-                    </Grid>*/}
-
+                </Grid>
             </div>
         )
     }
 }
 
-export default HomePage
+export default withStyles(styles)(HomePage);

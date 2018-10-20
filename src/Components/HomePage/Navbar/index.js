@@ -4,13 +4,29 @@ import axios from 'axios';
 // Material UI styles
 import { AppBar, Button, IconButton, Toolbar, Grid, Typography} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { AccountCircle, Home } from '@material-ui/icons';
 // ******************
 
 // Custom CSS styling
 import './index.css';
 // ******************
+import ChatModal from '../ChatModal'
+import ChatExpansionPanel from '../ChatExpansionPanel'
 
-const styles = {
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit,
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+  iconSmall: {
+    fontSize: 20,
+  },
   root: {
     flexGrow: 1,
   },
@@ -21,7 +37,20 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-};
+});
+
+// const styles = {
+//   root: {
+//     flexGrow: 1,
+//   },
+//   grow: {
+//     flexGrow: 1,
+//   },
+//   menuButton: {
+//     marginLeft: -12,
+//     marginRight: 20,
+//   },
+// };
 
 class Navbar extends Component {
 
@@ -68,65 +97,30 @@ class Navbar extends Component {
 
     render() {
         const { classes } = this.props;
-        const feedButtonColor = this.props.showFeed ? "textPrimary" : "inherit";
-        const chatButtonColor = this.props.showChat ? "textPrimary" : "inherit";
-        const profileButtonColor = this.props.showProfile ? "textPrimary" : "inherit";
+        const feedButtonColor = this.props.showFeed ? "textSecondary" : "inherit";
+        const profileButtonColor = this.props.showProfile ? "textSecondary" : "inherit";
 
         console.log('this.props.showFeed...', this.props.showFeed);
         return (
             <div className={classes.root}>
               <AppBar position="static" color="primary">
                 <Toolbar>
+                  <IconButton className={classes.menuButton} color={profileButtonColor} aria-label="Menu" onClick={()=>this.props.profileClick()}>
+                    <AccountCircle />
+                  </IconButton>
                   <Typography variant="h6" color={feedButtonColor} className={classes.grow}>
-                    <Button color="inherit" onClick={()=>this.props.feedClick()}>
+                    <Button color="inherit" onClick={()=>this.props.feedClick()} className={classes.button}>
+                    <Home className={classes.leftIcon} />
                     Home
                     </Button>
                   </Typography>
-                  <Typography variant="h6" color={chatButtonColor} className={classes.grow}>
-                    <Button color="inherit" onClick={()=>this.props.chatClick()}>
-                    Chat
-                    </Button>
-                  </Typography>
-                  <Typography variant="h6" color={profileButtonColor} className={classes.grow}>
-                    <Button color="inherit" onClick={()=>this.props.profileClick()}>
-                    Profile
-                    </Button>
-                  </Typography>
-                  <Button color="inherit" onClick={()=>this.handleLogout()}>Logout</Button>
+                  <Button color="inherit" onClick={()=>this.handleLogout()}>
+                    Logout
+                </Button>
                 </Toolbar>
               </AppBar>
             </div>
         );
-//         return (
-//             <div>
-//                 <AppBar position="static" color="default">
-//                     <Toolbar>
-//                         <Grid container spacing={16}>
-//                             <Grid item>
-//                                 <Button onClick={()=>this.handleClick()}  variant="contained" size="large" color="primary" >
-//                                 Home
-//                                 </Button>
-//                             </Grid>
-//                             <Grid item>
-//                                 <Button variant="contained" size="large" color="primary" >
-//                                 Chat
-//                                 </Button>
-//                             </Grid>
-//                             <Grid item>
-//                                 <Button variant="contained" size="large" color="primary" >
-//                                 Profile
-//                                 </Button>
-//                             </Grid>
-// {/*                            <Grid item>
-//                                 <Button variant="contained" size="large" color="primary" >
-//                                 Services
-//                                 </Button>
-//                             </Grid>*/}
-//                         </Grid>
-//                     </Toolbar>
-//                 </AppBar>
-//             </div>
-//         )
 }
 }
 
